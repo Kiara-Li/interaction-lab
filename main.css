@@ -1,0 +1,130 @@
+/* Use these classes to style the .card component */
+
+.card {}
+.card__title {}
+.card__excerpt {}
+.card__image {}
+.card__more {}
+.card__more:hover {}
+.card__more:active {}
+
+@media screen and (min-width: 1024px) {
+  .card{}
+  .card__title {}
+  .card__excerpt {}
+  .card__image {}
+  .card__more {}
+  .card__more:hover {}
+  .card__more:active {}
+}
+
+/* You can leave everything below as is — we'll explain flexbox in a later lecture! */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 8vw;
+  background-color:#3f4122;
+}
+.card {
+    font-family: "Pixelify Sans", serif;
+    line-height: 1.3;
+    padding: 2rem;
+  background-color: #d4d6cf;
+  border-radius: 2rem;
+}
+.card__image {
+    margin: 1.5rem 0;
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+}
+.card__title {
+    font-size:3rem;
+    color: #013a20;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 15ch;
+    animation: typing 2s steps(12) forwards, blink 0.2s infinite alternate;
+}
+.card__excerpt {
+    font-size: 1.1rem;
+    color: #333;
+    background: #f5f5dc;
+    padding: 10px;
+    border-left: 5px solid #333;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+.card__more {
+    display:block;
+    text-align:center;
+    padding: 1 rem;
+    background-color: #536f16;
+    transition: border-radius 1s linear;
+    text
+}
+.card__more:hover {
+    border-radius: 2rem;
+
+}
+.card__more:active {
+    background-color: #dba40e;
+
+}
+.card:hover{
+    box-shadow: 0 0 30px #f5f5dc;
+}
+
+@media screen and (min-width: 1024px) {
+    .cards{background:#dba40e;}
+    .card{
+        background-color: #013a20;
+    }
+    .card__title {
+        font-size: 5rem;
+        color: #d4d6cf;
+    }
+    .card__excerpt {
+        font-size: 2rem;
+    }
+    .card__image {}
+    .card__more {}
+    .card__more:hover {}
+    .card__more:active {}
+  }
+  @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: float 3s ease-in-out infinite;
+}
+
